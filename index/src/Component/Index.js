@@ -14,7 +14,7 @@ function Index() {
   function delete_user(e){
     e.preventDefault();
     setdelete(deleteId)
-    axios.delete('http://127.0.0.1:8000/remove/',idFromdelete)
+    axios.delete(`http://127.0.0.1:8000/remove/${idFromdelete}`)
     .then(response=>{
       console.log(response)
 
@@ -24,7 +24,7 @@ function Index() {
         console.log(error)
       }
     )
-    setdeleteId()
+    
   }
 function handleSearch (){
   setIdFrombtnClick(idnumb)
@@ -36,6 +36,7 @@ function submit(e){
   .then(
     res=>{
       console.log(res)
+      
     }
   )
   .catch(
@@ -133,7 +134,7 @@ console.log(err)
       ></input>
       <button onClick={delete_user}> Delete</button>
 
-     
+    
     </div>
   );
 }
